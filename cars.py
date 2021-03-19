@@ -11,7 +11,7 @@ class Cars:
 
     def __init__(self):
         self.all_cars = []
-        #self.x_move = -STARTING_MOVE_DISTANCE
+        self.level_increment = 0
 
     def create_cars(self):
         random_chance = random.randint(1, 6)
@@ -26,10 +26,7 @@ class Cars:
 
     def move(self):
         for car in self.all_cars:
-            car.backward(STARTING_MOVE_DISTANCE)
-            #new_x = self.xcor()+self.x_move
-            #self.goto(new_x, self.ycor())
+            car.backward(STARTING_MOVE_DISTANCE + (MOVE_DISTANCE_INCREMENT * self.level_increment))
 
     def reset(self):
-        new_x_move = self.x_move - MOVE_DISTANCE_INCREMENT
-        self.x_move = new_x_move
+        self.level_increment += 1
