@@ -25,13 +25,20 @@ while game_is_on:
 
     time.sleep(0.1)
     screen.update()
+
+#   move cars
+    car.create_cars()
+    car.move()
+
     scoreboard.update_scoreboard()
 
+#   detect car collision
+    for vehicle in car.all_cars:
+        if vehicle.distance(player) < 20:
+            scoreboard.game_over()
+            game_is_on = False
 
-
-    #get cars moving
-
-    #detect level up and reset
+#   detect level up and reset
     if player.ycor() > 250:
         scoreboard.increase_level()
         player.reset()
