@@ -28,5 +28,5 @@ class Cars:
         for car in self.all_cars:
             car.backward(STARTING_MOVE_DISTANCE + (MOVE_DISTANCE_INCREMENT * self.level_increment))
 
-    def reset(self):
+    def reset_cars(self):
         self.level_increment += 1

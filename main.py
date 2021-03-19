@@ -41,7 +41,7 @@ while game_is_on:
 #   detect level up and reset
     if player.ycor() > 250:
         scoreboard.increase_level()
-        player.reset()
-        car.reset()
+        player.reset_player()
+        car.reset_cars()
 
 screen.exitonclick()
